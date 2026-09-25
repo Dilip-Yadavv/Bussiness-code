@@ -1,1 +1,882 @@
-<p>hello world</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Architectural Metalworks | Bespoke Iron Grills, Armored Doors & Gates</title>
+  <meta name="description" content="Master fabricators of luxury Mild Steel (MS 10G/12G), Forged Wrought Iron, SS-304/316 window grills, designer entrance gates, armored safety doors, and CNC laser facades with live 2D visualizer, price estimator, and Gemini AI advisor.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <div class="logo-brand" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">
+          <span class="logo-title dyn-shop-name">Apex Metalworks</span>
+          <span class="logo-sub dyn-tagline">Architectural Iron & Fabrication Atelier</span>
+        </div>
+      </div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#visualizer" class="nav-link">2D Studio</a>
+        <a href="#before-after" class="nav-link">Transformation</a>
+        <a href="#cases" class="nav-link">Case Studies</a>
+        <a href="#catalog" class="nav-link">Design Catalog</a>
+        <a href="#tolerances" class="nav-link">Engineering Specs</a>
+        <a href="#booking" class="nav-link">Book Site Visit</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-ai btn-sm" id="btnToggleGeminiChat" title="Ask Gemini AI Assistant">
+          🤖 Ask AI
+        </button>
+        <button class="btn btn-admin" id="btnOpenAdmin" title="Studio Admin Panel">
+          ⚙️ Admin
+        </button>
+        <a href="tel:+919876543210" class="btn btn-secondary btn-sm dyn-phone">
+          📞 Call Atelier
+        </a>
+        <a href="#visualizer" class="btn btn-primary btn-sm">
+          Get Quote
+        </a>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge-row">
+          <span class="badge badge-gold">★ ISO-Aligned Master Metalcrafters</span>
+          <span class="badge badge-steel">7-Tank Zinc Anti-Rust Coated</span>
+          <span class="badge badge-ai">⚡ Gemini AI Architectural Advisor</span>
+        </div>
+
+        <h1 class="hero-title">
+          Bespoke Iron Grills, <br>
+          <span class="gradient-text">Armored Doors & Gates</span>
+        </h1>
+
+        <p class="hero-description dyn-about">
+          Crafting high-security architectural metalworks for luxury residences, penthouses, and modern villas. Hand-forged wrought iron, heavy-gauge mild steel, marine SS-316, and CNC precision laser panels built to last for generations.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#visualizer" class="btn btn-primary btn-lg">
+            ⚡ Open 2D Customizer & Estimate
+          </a>
+          <a href="https://wa.me/919876543210" target="_blank" class="btn btn-whatsapp btn-lg dyn-whatsapp">
+            💬 WhatsApp Blueprint / Photos
+          </a>
+        </div>
+
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <span class="trust-number dyn-exp">22+</span>
+            <span class="trust-label">Years of Mastery</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number dyn-projects">4,200+</span>
+            <span class="trust-label">Completed Installs</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">100%</span>
+            <span class="trust-label">Solid Gauge Alloy</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-card-preview">
+        <img src="https://images.unsplash.com/photo-1549488344-1f9b8d2bd1f3?auto=format&fit=crop&w=1200&q=80" alt="Monumental Entrance Driveway Gate" class="hero-preview-img">
+        <div class="hero-preview-overlay">
+          <div>
+            <div class="preview-tag">Featured Custom Installation</div>
+            <div class="preview-name">Château Forged Entrance Gate</div>
+          </div>
+          <div class="preview-rate">Bespoke Build</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== 2D LIVE BLUEPRINT VISUALIZER & QUOTATION ENGINE ==================== -->
+  <section class="calculator-section" id="visualizer">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-subtitle">Real-Time Interactive Engineering</span>
+        <h2 class="section-title">2D Live Grill Visualizer & Cost Engine</h2>
+        <p class="section-desc">Adjust dimensions, bar geometry, alloy, and protective finish to see your exact 2D architectural blueprint render in real time with instant cost calculations.</p>
+      </div>
+
+      <div class="calc-studio-grid">
+        <!-- Visualizer Controls & Blueprint Canvas -->
+        <div class="calc-left-col">
+          
+          <!-- Live 2D SVG Blueprint Canvas -->
+          <div class="visualizer-blueprint-box">
+            <div class="blueprint-header">
+              <span class="blueprint-tag">CAD SCHEMATIC 2.0 • LIVE PREVIEW</span>
+              <span style="font-size:0.75rem; color:var(--text-muted);">True-to-Scale Vector Rendering</span>
+            </div>
+            <div class="canvas-container">
+              <svg id="grillCanvasSvg" viewBox="0 0 380 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Dynamically drawn via app.js -->
+              </svg>
+            </div>
+          </div>
+
+          <!-- Category Quick Selector -->
+          <div class="calc-field">
+            <label>Installation Category</label>
+            <div class="category-pills">
+              <button type="button" class="pill-btn calc-type-btn active" data-type="Window Grill">🪟 Window Grill</button>
+              <button type="button" class="pill-btn calc-type-btn" data-type="Safety Door">🚪 Armored Safety Door</button>
+              <button type="button" class="pill-btn calc-type-btn" data-type="Balcony Railing">🏢 Balcony Facade</button>
+              <button type="button" class="pill-btn calc-type-btn" data-type="Main Entrance Gate">🏰 Monumental Gate</button>
+              <button type="button" class="pill-btn calc-type-btn" data-type="Staircase Railing">🪜 Stair Railing</button>
+            </div>
+          </div>
+
+          <!-- Dimensions (Width & Height) -->
+          <div class="calc-row-group">
+            <div class="calc-field">
+              <label>Width (in Feet) <span id="calcWidthVal">4 ft</span></label>
+              <div class="dimension-slider-box">
+                <input type="range" id="calcWidth" min="1" max="25" step="0.5" value="4">
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <label>Height (in Feet) <span id="calcHeightVal">4 ft</span></label>
+              <div class="dimension-slider-box">
+                <input type="range" id="calcHeight" min="1" max="20" step="0.5" value="4">
+              </div>
+            </div>
+          </div>
+
+          <!-- Number of units & Pattern selection -->
+          <div class="calc-row-group">
+            <div class="calc-field">
+              <label>Number of Openings / Units <span id="calcQtyVal">1 unit(s)</span></label>
+              <div class="dimension-slider-box">
+                <input type="range" id="calcQty" min="1" max="25" step="1" value="1">
+              </div>
+            </div>
+
+            <div class="calc-field">
+              <label>Bar Pattern Geometry</label>
+              <select id="calcPattern" class="calc-select">
+                <option value="vertical">Modern Clean Vertical (Picket Top)</option>
+                <option value="diamond">Diamond Lattice (Criss-Cross Grid)</option>
+                <option value="belly">Belly-Curved Victorian (Flower Planter Profile)</option>
+                <option value="laser">Parametric CNC Moroccan Honeycomb</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Material Alloy -->
+          <div class="calc-row-group">
+            <div class="calc-field">
+              <label>Metal Specification & Alloy Gauge</label>
+              <select id="calcMaterial" class="calc-select">
+                <!-- Dynamically populated from data -->
+              </select>
+            </div>
+
+            <div class="calc-field">
+              <label>Design Complexity</label>
+              <select id="calcComplexity" class="calc-select">
+                <option value="1.0">Standard Geometric (Clean Bars)</option>
+                <option value="1.15">Medium Modern (Lattice / Angular Accents)</option>
+                <option value="1.35">Heavy Forged Mastercraft (Hand-Twisted & Scrolls)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Protective Finish Swatches -->
+          <div class="calc-field">
+            <label>Protective Coating & Color Finish Swatch</label>
+            <div class="swatches-grid" id="finishSwatchesContainer">
+              <!-- Dynamically populated from data -->
+            </div>
+          </div>
+
+          <!-- Photo / Blueprint Upload helper -->
+          <div class="photo-attach-box">
+            <div>
+              <span style="font-weight:700; font-size:0.86rem; color:var(--text-bright);">Attach Site Photo or Blueprint</span>
+              <div class="photo-attach-text" id="photoAttachLabel">Optional: Attach an image to transmit with your WhatsApp quotation</div>
+            </div>
+            <label class="btn btn-secondary btn-sm" style="cursor:pointer;">
+              📷 Upload Image
+              <input type="file" accept="image/*" style="display:none;" onchange="handleAttachPhoto(this)">
+            </label>
+          </div>
+
+        </div>
+
+        <!-- Live Estimate Summary Card -->
+        <div class="calc-summary-card">
+          <div>
+            <h3 class="summary-heading">Architectural Specification</h3>
+            <div class="summary-metric-list">
+              <div class="metric-row">
+                <span>Total Scope Area:</span>
+                <strong id="summarySqFt">16.0 sq. ft</strong>
+              </div>
+              <div class="metric-row">
+                <span>Alloy Spec:</span>
+                <strong id="summaryMaterial">Mild Steel (MS)</strong>
+              </div>
+              <div class="metric-row">
+                <span>Coating Protection:</span>
+                <strong id="summaryFinish">7-Tank Zinc Powder Coat</strong>
+              </div>
+              <div class="metric-row">
+                <span>Approx Metal Mass:</span>
+                <strong id="summaryWeight" style="color:var(--accent-steel);">~54 kg approx</strong>
+              </div>
+              <div class="metric-row">
+                <span>Effective Rate:</span>
+                <strong id="summaryRate">₹290 / sq. ft</strong>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="metric-total-box">
+              <div class="total-label">Estimated Fabrication Cost</div>
+              <div class="total-amount" id="summaryTotal">₹4,640</div>
+              <div class="total-subtext">*Includes precision fabrication, 7-tank anti-corrosion treatment & standard anchoring fixtures. Excludes civil wall modifications.</div>
+            </div>
+
+            <div class="calc-action-buttons">
+              <a href="#" id="btnEstimateWhatsApp" target="_blank" class="btn btn-whatsapp btn-lg">
+                💬 Transmit Blueprint & Quote to WhatsApp
+              </a>
+              <a href="#booking" class="btn btn-secondary">
+                📐 Schedule Laser Site Measurement
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BEFORE & AFTER TRANSFORMATION SLIDER ==================== -->
+  <section class="before-after-section" id="before-after">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-subtitle">Real-World Transformation</span>
+        <h2 class="section-title">See The Difference: Before & After</h2>
+        <p class="section-desc">Drag the interactive slider below to see how our heavy-gauge anti-rust architectural grills transform old, rusted windows into modern luxury facades.</p>
+      </div>
+
+      <div class="ba-slider-container" id="beforeAfterContainer">
+        <!-- Before Image (Old/Rusted) -->
+        <div class="ba-image-wrapper">
+          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80" alt="Old Windows Before Upgrade" class="ba-img">
+          <span class="ba-badge before">BEFORE (Old Weathered)</span>
+        </div>
+
+        <!-- After Image (Modern Powder Coated) -->
+        <div class="ba-after-layer" id="baAfterLayer">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Modern Powder Coated Facade" class="ba-img">
+          <span class="ba-badge after">AFTER (Apex 7-Tank Powder Coated)</span>
+        </div>
+
+        <!-- Draggable Handle -->
+        <div class="ba-handle" id="baHandle">↔</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== REAL ARCHITECTURAL CASE STUDIES ==================== -->
+  <section class="case-studies-section" id="cases">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-subtitle">Proven Execution</span>
+        <h2 class="section-title">Architectural Project Case Studies</h2>
+        <p class="section-desc">Detailed review of recent custom residential and commercial fabrication projects.</p>
+      </div>
+
+      <div class="case-grid">
+        <div class="case-card">
+          <div class="case-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Villa Solaria Facade Grills">
+          </div>
+          <div class="case-body">
+            <div class="case-meta">
+              <span>📍 Palm Meadows Estate</span>
+              <span>• 1,450 Sq. Ft.</span>
+              <span>• 14 Days Turnaround</span>
+            </div>
+            <h3 class="case-title">Villa Solaria — 38 Bespoke Facade Grills & Main Gate</h3>
+            <p class="case-specs">
+              <strong>Specifications:</strong> Solid MS 12-Gauge cold-rolled bars with 7-tank hot chemical zinc phosphating and baked matte jet black powder coating.
+            </p>
+            <div style="font-size:0.84rem; color:var(--text-muted); font-style:italic;">
+              "Apex fabricated with zero tolerance deviation from our architectural blueprints." — Ar. Sneha Kulkarni
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-img-wrap">
+            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80" alt="Skyline High-Rise Invisible Grills">
+          </div>
+          <div class="case-body">
+            <div class="case-meta">
+              <span>📍 Skyline Towers</span>
+              <span>• 3,200 Sq. Ft.</span>
+              <span>• 21 Days Turnaround</span>
+            </div>
+            <h3 class="case-title">Skyline High-Rise — 92 Balcony Railings & Invisible Grills</h3>
+            <p class="case-specs">
+              <strong>Specifications:</strong> Marine Grade SS-316 high-tensile 300kg break cables with anodized aluminum perimeter framing and parametric laser-cut balcony accents.
+            </p>
+            <div style="font-size:0.84rem; color:var(--text-muted); font-style:italic;">
+              "Exceptional safety compliance and rapid on-site laser anchoring." — Meridian Developers
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCT CATALOG & FILTERABLE SHOWCASE ==================== -->
+  <section class="catalog-section" id="catalog">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-subtitle">Real Craftsmanship Portfolio</span>
+        <h2 class="section-title">Design Catalog & Gallery</h2>
+        <p class="section-desc">Explore our custom forged window grills, armored entrance doors, parametric balcony facades, and driveway gates.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-category="all">All Designs</button>
+        <button class="filter-btn" data-category="window">Window Grills</button>
+        <button class="filter-btn" data-category="doors">Armored Safety Doors</button>
+        <button class="filter-btn" data-category="gates">Main Entrance Gates</button>
+        <button class="filter-btn" data-category="balcony">Balcony Facades</button>
+        <button class="filter-btn" data-category="stairs">Staircase Railings</button>
+      </div>
+
+      <div class="product-grid" id="productGrid">
+        <!-- Dynamically populated via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ENGINEERING SPECS & MATERIAL TOLERANCES TABLE ==================== -->
+  <section class="standards-section" id="tolerances">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-subtitle">Engineering & Quality Standards</span>
+        <h2 class="section-title">Material Tolerances & Strength Ratings</h2>
+        <p class="section-desc">Every alloy and weld is certified to meet strict anti-burglary structural thresholds and ASTM anti-corrosion standards.</p>
+      </div>
+
+      <div class="specs-table-wrapper">
+        <table class="specs-table">
+          <thead>
+            <tr>
+              <th>Metal Alloy Specification</th>
+              <th>Tensile Strength</th>
+              <th>Security Rating</th>
+              <th>Mass (Per Sq.Ft)</th>
+              <th>Base Rate</th>
+            </tr>
+          </thead>
+          <tbody id="specsTableBody">
+            <!-- Dynamically populated from data -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EMERGENCY REPAIR / BURGLARY HARDENING HOTLINE ==================== -->
+  <section class="repair-banner">
+    <div class="container repair-grid">
+      <div>
+        <span class="badge badge-gold" style="margin-bottom:6px;">⚡ Direct Atelier Support</span>
+        <h3 style="font-size:1.2rem; color:#fff;">Need Urgent On-Site Repair, Broken Gate Hinge or Burglary Hardening?</h3>
+        <p style="font-size:0.86rem; color:var(--text-muted);">Our mobile welding and laser repair crew is dispatched within 2 hours.</p>
+      </div>
+      <div style="display:flex; gap:10px;">
+        <a href="tel:+919876543210" class="btn btn-primary dyn-phone">
+          📞 Call Urgent Hotline
+        </a>
+        <a href="https://wa.me/919876543210" target="_blank" class="btn btn-whatsapp dyn-whatsapp">
+          💬 WhatsApp Urgent Alert
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WORKSHOP LOCATION & SITE BOOKING ==================== -->
+  <section class="inquiry-section" id="booking">
+    <div class="container">
+      <div class="inquiry-card">
+        <div class="inquiry-grid">
+          
+          <div class="inquiry-info">
+            <span class="section-subtitle">Direct Atelier Connect</span>
+            <h2 class="section-title">Visit Our Atelier / Book Laser Measurement</h2>
+            <p style="color:var(--text-muted);">
+              Inspect raw alloy billets, examine real 7-tank powder-coated finish samples in person, or schedule a master fabricator for laser site measurements.
+            </p>
+
+            <div class="contact-meta-list">
+              <div class="contact-meta-item">
+                <div class="meta-icon-bubble">📍</div>
+                <div class="meta-text-wrap">
+                  <span class="meta-label">Atelier Workshop Location</span>
+                  <span class="meta-val dyn-address">Plot 42, Heavy Industrial Zone, Phase II, Highway Corridor</span>
+                </div>
+              </div>
+
+              <div class="contact-meta-item">
+                <div class="meta-icon-bubble">📞</div>
+                <div class="meta-text-wrap">
+                  <span class="meta-label">Direct Studio Phone</span>
+                  <span class="meta-val dyn-phone">+91 98765 43210</span>
+                </div>
+              </div>
+
+              <div class="contact-meta-item">
+                <div class="meta-icon-bubble">⏰</div>
+                <div class="meta-text-wrap">
+                  <span class="meta-label">Atelier Working Hours</span>
+                  <span class="meta-val dyn-hours">Mon - Sat: 8:30 AM - 8:30 PM</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Live Google Maps -->
+            <div class="map-embed-box">
+              <iframe id="googleMapFrame" src="https://maps.google.com/maps?q=Heavy%20Industrial%20Zone%20Phase%202&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy"></iframe>
+              <div class="map-action-bar">
+                <span style="font-size:0.8rem; color:var(--text-bright);">📍 Atelier Directions</span>
+                <a href="#" id="mapDirectionsLink" target="_blank" class="btn btn-sm btn-secondary">
+                  🗺️ Open Google Maps
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Booking Form -->
+          <form class="inquiry-form" id="inquiryForm">
+            <h3 style="color:var(--accent-gold); margin-bottom:2px;">Request Site Laser Measurement</h3>
+            <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:8px;">Senior technician visits with laser meter and alloy swatches.</p>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="inqName">Client / Architect Name *</label>
+                <input type="text" id="inqName" class="form-control" placeholder="e.g. Ramesh Patel" required>
+              </div>
+
+              <div class="form-group">
+                <label for="inqPhone">WhatsApp / Phone Number *</label>
+                <input type="tel" id="inqPhone" class="form-control" placeholder="e.g. +91 98765 43210" required>
+              </div>
+            </div>
+
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="inqLocation">Site Location / Area</label>
+                <input type="text" id="inqLocation" class="form-control" placeholder="e.g. Palm Meadows, Villa 14">
+              </div>
+
+              <div class="form-group">
+                <label for="inqWorkType">Scope of Work</label>
+                <select id="inqWorkType" class="form-control">
+                  <option value="Window Grills">Window Grills</option>
+                  <option value="Safety Door">Armored Safety Security Door</option>
+                  <option value="Main Entrance Gate">Monumental Entrance Gate</option>
+                  <option value="Balcony Railing">Balcony / Terrace Railings</option>
+                  <option value="Staircase Railing">Staircase Railing</option>
+                  <option value="Full Villa Package">Complete Architectural Package</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inqNotes">Project Blueprint & Size Notes (Optional)</label>
+              <textarea id="inqNotes" class="form-control" placeholder="Mention number of window openings, architectural drawings, or delivery deadline..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="margin-top:6px;">
+              📐 Book Laser Measurement & Send to WhatsApp
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TESTIMONIALS ==================== -->
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-subtitle">Verified Feedback</span>
+        <h2 class="section-title">Endorsements from Architects & Homeowners</h2>
+      </div>
+
+      <div class="testimonials-grid" id="testimonialGrid">
+        <!-- Dynamically rendered via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="logo-brand">
+            <div class="logo-icon">⚡</div>
+            <div class="logo-text">
+              <span class="logo-title dyn-shop-name">Apex Metalworks</span>
+              <span class="logo-sub dyn-tagline">Architectural Iron & Fabrication Atelier</span>
+            </div>
+          </div>
+          <p class="dyn-about">
+            Bespoke fabricators of luxury architectural window grills, armored doors, forged driveway gates, and parametric CNC facades.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Installations</h4>
+          <ul class="footer-links">
+            <li><a href="#catalog">Window Grills</a></li>
+            <li><a href="#catalog">Armored Safety Doors</a></li>
+            <li><a href="#catalog">Driveway Gates</a></li>
+            <li><a href="#catalog">Balcony Facades</a></li>
+            <li><a href="#catalog">Laser Cut Panels</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Studio Tools</h4>
+          <ul class="footer-links">
+            <li><a href="#visualizer">2D Live Studio</a></li>
+            <li><a href="#before-after">Before & After</a></li>
+            <li><a href="#tolerances">Engineering Specs</a></li>
+            <li><a href="javascript:void(0)" onclick="document.getElementById('btnToggleGeminiChat').click()">Gemini AI Advisor</a></li>
+            <li><a href="javascript:void(0)" onclick="document.getElementById('btnOpenAdmin').click()">Atelier Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Connect</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+919876543210" class="dyn-phone">📞 +91 98765 43210</a></li>
+            <li><a href="https://wa.me/919876543210" target="_blank" class="dyn-whatsapp">💬 WhatsApp Atelier</a></li>
+            <li><span class="dyn-hours" style="color:var(--text-muted); font-size:0.85rem;">Mon - Sat: 8:30 AM - 8:30 PM</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© <span id="yearVal">2026</span> <span class="dyn-shop-name">Apex Architectural Metalworks</span>. All Rights Reserved.</div>
+        <div>Engineered for Architectural Luxury, Precision Tolerances & High Security.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING GEMINI AI CHAT TRIGGER & WIDGET ==================== -->
+  <button class="float-ai-chat" id="btnFloatAiChat" onclick="document.getElementById('btnToggleGeminiChat').click()">
+    <span>🤖</span>
+    <span>Ask Gemini AI</span>
+  </button>
+
+  <div class="gemini-chat-widget" id="geminiChatWidget">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-bot-avatar">🤖</div>
+        <div class="chat-header-text">
+          <h4>Gemini Architectural Advisor</h4>
+          <span>24/7 Expert Metal Fabrication Consultant</span>
+        </div>
+      </div>
+      <button class="chat-close-btn" id="btnCloseGeminiChat">✕</button>
+    </div>
+
+    <div class="chat-body" id="chatMessages">
+      <div class="chat-msg bot">
+        <div class="msg-bubble">
+          👋 Welcome to <strong>Apex Architectural Metalworks</strong>.<br><br>
+          I can calculate structural tolerances, compare MS vs SS-304/316, or advise on anti-rust 7-tank powder coating for your project. Tap a question below or type your inquiry!
+        </div>
+        <span class="msg-time">Just now</span>
+      </div>
+    </div>
+
+    <div class="chat-chips-container">
+      <div class="chat-chip" data-query="How does 7-tank zinc powder coating prevent rust?">🛡️ Anti-Rust Coating</div>
+      <div class="chat-chip" data-query="Compare Mild Steel MS vs Marine SS-304 Stainless Steel">⚖️ MS vs SS-304</div>
+      <div class="chat-chip" data-query="What steel gauge is required for high security doors?">📏 Steel Gauge Rules</div>
+      <div class="chat-chip" data-query="What are the child safety codes for balcony railings?">🏢 Balcony Safety</div>
+      <div class="chat-chip" data-query="What is the estimated cost for 5 window grills?">💰 Estimate Cost</div>
+    </div>
+
+    <form class="chat-input-row" id="geminiChatForm">
+      <input type="text" id="geminiChatInput" placeholder="Ask about alloy, gauge, quote, coating..." autocomplete="off">
+      <button type="submit" class="chat-send-btn">➤</button>
+    </form>
+  </div>
+
+  <!-- ==================== FLOATING CONTACT BUTTONS ==================== -->
+  <div class="floating-actions">
+    <a href="https://wa.me/919876543210" target="_blank" class="float-btn float-whatsapp dyn-whatsapp" title="Chat on WhatsApp" aria-label="WhatsApp">
+      💬
+    </a>
+    <a href="tel:+919876543210" class="float-btn float-call dyn-phone" title="Call Atelier Directly" aria-label="Phone Call">
+      📞
+    </a>
+  </div>
+
+  <!-- ==================== SELF-MANAGEABLE ADMIN MODAL ==================== -->
+  <div class="modal-overlay" id="adminModal">
+    <div class="admin-modal-card">
+      
+      <div class="admin-modal-head">
+        <div class="admin-modal-title">
+          <span>⚙️</span>
+          <h3>Atelier Owner Admin Management</h3>
+        </div>
+        <button class="modal-close-btn" id="btnCloseAdmin" aria-label="Close Admin Modal">✕</button>
+      </div>
+
+      <div class="admin-nav-tabs">
+        <button class="admin-tab-btn active" data-tab="tabProfile">Studio Profile</button>
+        <button class="admin-tab-btn" data-tab="tabRates">Rate Master (Price/Sq.Ft)</button>
+        <button class="admin-tab-btn" data-tab="tabProducts">Catalog Manager</button>
+        <button class="admin-tab-btn" data-tab="tabInquiries">Customer Inquiries Log</button>
+        <button class="admin-tab-btn" data-tab="tabAi">Gemini AI Settings</button>
+        <button class="admin-tab-btn" data-tab="tabBackup">Backup & Export</button>
+      </div>
+
+      <div class="admin-modal-body">
+        
+        <!-- Tab 1: Studio Profile -->
+        <div class="admin-tab-panel active" id="tabProfile">
+          <div class="admin-form-section">
+            <h4>Basic Business Details</h4>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label>Studio / Shop Name</label>
+                <input type="text" id="adminShopName" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Tagline / Subheading</label>
+                <input type="text" id="adminTagline" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-row-2" style="margin-top:10px;">
+              <div class="form-group">
+                <label>Call Phone Number</label>
+                <input type="text" id="adminPhone" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>WhatsApp Number (With Country Code)</label>
+                <input type="text" id="adminWhatsapp" class="form-control" placeholder="+919876543210">
+              </div>
+            </div>
+
+            <div class="form-row-2" style="margin-top:10px;">
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="adminEmail" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Working Hours</label>
+                <input type="text" id="adminHours" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-row-2" style="margin-top:10px;">
+              <div class="form-group">
+                <label>Atelier Street Address</label>
+                <input type="text" id="adminAddress" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>City & Pin Code</label>
+                <input type="text" id="adminCity" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top:10px;">
+              <label>Studio Bio & Experience Narrative</label>
+              <textarea id="adminAbout" class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Rate Master -->
+        <div class="admin-tab-panel" id="tabRates">
+          <div class="admin-form-section">
+            <h4>Update Base Price / Sq. Ft & Weight Reference</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:12px;">
+              These rates are calculated live in the 2D visualizer to quote clients automatically.
+            </p>
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Metal Specification</th>
+                  <th>Base Rate (₹ / Sq. Ft)</th>
+                  <th>Weight (Kg / Sq. Ft)</th>
+                </tr>
+              </thead>
+              <tbody id="adminRatesTableBody">
+                <!-- Populated dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 3: Product Inventory -->
+        <div class="admin-tab-panel" id="tabProducts">
+          <div class="admin-form-section">
+            <h4>Add New Architectural Installation</h4>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label>Installation Title</label>
+                <input type="text" id="newProdTitle" class="form-control" placeholder="e.g. Modern Minimalist Facade Grill">
+              </div>
+              <div class="form-group">
+                <label>Category</label>
+                <select id="newProdCategory" class="form-control">
+                  <option value="window">Window Grill</option>
+                  <option value="doors">Armored Safety Door</option>
+                  <option value="gates">Main Entrance Gate</option>
+                  <option value="balcony">Balcony Facade</option>
+                  <option value="stairs">Staircase Railing</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row-2" style="margin-top:10px;">
+              <div class="form-group">
+                <label>Alloy Specification</label>
+                <input type="text" id="newProdMaterial" class="form-control" placeholder="e.g. MS 12G Solid Alloy">
+              </div>
+              <div class="form-group">
+                <label>Reference Price Display</label>
+                <input type="text" id="newProdPrice" class="form-control" placeholder="e.g. ₹280 - ₹380 / sq.ft">
+              </div>
+            </div>
+
+            <div class="form-row-2" style="margin-top:10px;">
+              <div class="form-group">
+                <label>Photo URL (Image Link)</label>
+                <input type="url" id="newProdImage" class="form-control" placeholder="https://images.unsplash.com/...">
+              </div>
+              <div class="form-group">
+                <label>Short Description</label>
+                <input type="text" id="newProdDesc" class="form-control" placeholder="7-tank zinc powder coated with concealed wall bolts.">
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="addNewProduct()" style="margin-top:12px;">
+              ＋ Add to Portfolio
+            </button>
+          </div>
+
+          <div class="admin-form-section" style="margin-top:20px;">
+            <h4>Existing Portfolio Installations</h4>
+            <div id="adminProductsList">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Inquiries Log -->
+        <div class="admin-tab-panel" id="tabInquiries">
+          <div class="admin-form-section">
+            <h4>Incoming Quotation & Measurement Leads</h4>
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Client Name</th>
+                  <th>Phone Number</th>
+                  <th>Project Scope</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="adminInquiriesTableBody">
+                <!-- Dynamic leads list -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 5: Gemini AI Settings -->
+        <div class="admin-tab-panel" id="tabAi">
+          <div class="admin-form-section">
+            <h4>Google Gemini AI Architectural Advisor Settings</h4>
+            <p style="font-size:0.86rem; color:var(--text-muted); margin-bottom:14px;">
+              The website features a built-in offline Metal Engineering advisor. If you want live Google Gemini 1.5 Flash API responses, enter your free API key from <a href="https://aistudio.google.com/" target="_blank" style="color:var(--accent-steel); text-decoration:underline;">Google AI Studio</a>.
+            </p>
+            <div class="form-group">
+              <label>Google Gemini API Key (Optional)</label>
+              <input type="password" id="adminGeminiKey" class="form-control" placeholder="AIzaSy...">
+            </div>
+            <div style="font-size:0.75rem; color:var(--text-dim); margin-top:6px;">
+              *Leave blank to use the built-in offline fabrication expert engine.
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 6: Backup & Export -->
+        <div class="admin-tab-panel" id="tabBackup">
+          <div class="admin-form-section">
+            <h4>Data Export & Factory Reset</h4>
+            <p style="font-size:0.86rem; color:var(--text-muted); margin-bottom:14px;">
+              Download a complete backup JSON file containing all customized rates, photos, and studio configurations.
+            </p>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <button type="button" class="btn btn-secondary" onclick="exportConfig()">
+                📥 Download Backup JSON
+              </button>
+              <button type="button" class="btn btn-secondary" onclick="resetToDefault()" style="color:#ef4444;">
+                ⚠️ Reset to Factory Defaults
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="admin-modal-foot">
+        <span style="font-size:0.8rem; color:var(--text-muted);">All edits are synchronized live with browser storage.</span>
+        <button type="button" class="btn btn-primary" onclick="saveAllAdminSettings()">
+          💾 Save All Settings
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+  <script>
+    document.getElementById("yearVal").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
